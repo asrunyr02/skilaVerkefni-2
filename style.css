@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+header {
+  background-color: blue;
+  padding: 15px 20px;
+  text-align: center;
+  color: white;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 120px);
+  gap: 20px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 10px auto 0 auto;
+  padding: 20px;
+}
+.todo .a {
+  background-color: pink;
+  color: white;
+  min-height: 120px;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-shadow:
+    0 4px,
+    10px rgba(0, 0, 0, 1);
+}
+.todo .b {
+  background-color: green;
+  color: white;
+  min-height: 120px;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-shadow:
+    0 4px,
+    10px rgba(0, 0, 0, 1);
+}
+.todo .c {
+  background-color: red;
+  color: white;
+  min-height: 120px;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-shadow:
+    0 4px,
+    10px rgba(0, 0, 0, 1);
+}
+.add {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px, 25px;
+  max-width: 750px;
+  margin: 30px auto;
+  box-shadow:
+    0,
+    4px,
+    6px,
+    -1px rgba(0, 0, 0, 0.05);
+}
+.add h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: x-large;
+  color: black;
+  font-weight: 600;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.input-group label {
+  font-size: 0.85rem;
+  color: black;
+}
+.input-group input {
+  padding: 10px 12px;
+  border: 1px solid black;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+}
+.input-group button {
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-top: 5px;
+}
+.input-group button:hover {
+  background-color: #1d4ed8;
+}
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+.form-row input {
+  flex: 1;
+}
