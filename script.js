@@ -48,17 +48,23 @@ function renderTask() {
       tasks = tasks.filter((t) => t.id !== task.id);
       renderTask();
     });
+    const buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("button-container");
+
+    buttonContainer.appendChild(toggleButton);
+    buttonContainer.appendChild(deleteButton);
 
     questItem.appendChild(textSpan);
-    questItem.appendChild(toggleButton);
-    questItem.appendChild(deleteButton);
+    questItem.appendChild(buttonContainer);
+
     questList.appendChild(questItem);
   }
-  if (totalCountEl) totalCountEl.textContent = `Total quest:${tasks.length}`;
+  if (totalCountEl)
+    totalCountEl.innerHTML = `Total quest<br><span class="big-number">${tasks.length}</span>`;
   if (finishedCountEl)
-    finishedCountEl.textContent = `Quest finished: ${finishedCount}`;
+    finishedCountEl.innerHTML = `Quest finished<br><span class="big-number">${finishedCount}</span>`;
   if (unfinishedCountEl)
-    unfinishedCountEl.textContent = `Quest unfinished: ${unfinishedCount}`;
+    unfinishedCountEl.innerHTML = `Quest unfinished<br><span class="big-number">${unfinishedCount}</span>`;
 }
 
 submitButton.addEventListener("click", function (event) {
