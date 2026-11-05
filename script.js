@@ -4,10 +4,14 @@ const questList = document.getElementById("quest-list");
 const totalCountEl = document.getElementById("total-quest");
 const finishedCountEl = document.getElementById("finished-count");
 const unfinishedCountEl = document.getElementById("unfinished-count");
-let tasks = [
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [
   { id: 1, title: "wash up", done: false },
   { id: 2, title: "do laundry", done: true },
 ];
+
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
 function renderTask() {
   if (!questList) return;
@@ -39,6 +43,7 @@ function renderTask() {
     toggleButton.textContent = task.done ? "Unfinished" : "finished";
     toggleButton.addEventListener("click", function () {
       task.done = !task.done;
+      saveTasks();
       renderTask();
     });
 
@@ -46,6 +51,7 @@ function renderTask() {
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", function () {
       tasks = tasks.filter((t) => t.id !== task.id);
+      saveTasks();
       renderTask();
     });
     const buttonContainer = document.createElement("div");
@@ -84,6 +90,8 @@ submitButton.addEventListener("click", function (event) {
 
   inputField.value = "";
   console.log("New task:", tasks);
+
+  saveTasks();
 
   renderTask();
 });
